@@ -1,17 +1,15 @@
-import {createTodoHtml} from "./create-todo.html";
+import { createTodoHTML } from './create-todo-html'
 
 let element
 
 export const renderTodos = (elementId, todos = []) => {
-    if (!element) {
-        element = document.querySelector(elementId)
-    }
+  if (!element) element = document.querySelector(elementId)
 
-    if (!element) throw new Error(`Element ${element.id} not found`)
+  if (!element) throw new Error(`Element ${elementId} found`)
 
-    element.innerHTML = ''
+  element.innerHTML = ''
 
-    todos.forEach(todo => {
-        element.append(createTodoHtml(todo))
-    })
+  todos.forEach(todo => {
+    element.append(createTodoHTML(todo))
+  })
 }

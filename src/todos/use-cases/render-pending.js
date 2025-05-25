@@ -1,13 +1,11 @@
-import todoStore, {Filters} from "../../store/todo.store.js";
+import todoStore, { Filters } from '../../store/todo.store.js'
 
 let element
 
 export const renderPending = (elementId) => {
-    if (!element)
-        element = document.querySelector(elementId)
+  if (!element) element = document.querySelector(elementId)
 
-    if (!element)
-        throw new Error(`Element ${elementId} not found`)
+  if (!element) throw new Error(`Element ${elementId} not found!`)
 
-    element.innerHTML = todoStore.getTodos(Filters.Pending).length
+  element.innerHTML = todoStore.getTodos(Filters.Pending).length
 }
